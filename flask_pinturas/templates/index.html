@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block titulo %}Página Principal Pinturas{% endblock %}
+{% block contenido %}
+
+<!-- <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      var scrollpos = localStorage.getItem("scrollpos");
+      if (scrollpos) window.scrollTo(0, scrollpos);
+    });
+
+    window.onscroll = function (e) {
+      localStorage.setItem("scrollpos", window.scrollY);
+    };
+  </script> -->
+
+{% include '_menu.html' %}
+
+<div class="container mt-5 titulo_index">
+   
+   <div>
+      <h2>Bienvenidos al Dashboard de {{sistema}} </h2>
+   </div>
+
+   <div class="vinculos">
+      <a href="/agregarpintura">Agregar Pintura</a>
+  </div>
+
+</div>
+
+
+<div class="principal_titulo">
+<div>
+  <h3>Lista de Todas las Pinturas</h3>
+</div>
+<div>
+  <h3>Pinturas compradas por el usuario</h3>
+</div>
+
+</div>
+
+<hr>
+
+<div class="principal" >
+
+
+
+
+      <div class="fila2columna1">
+
+
+        <table class="tabla_pinturas">
+
+            <tr>
+                <th>Titulo</th>
+                <th>Pintor</th>
+                <th>Opciones</th>
+            </tr>
+
+          {%if lista_pinturas.id != None%}
+            {%for i in lista_pinturas%}
+            <tr>
+
+            <td>
+              <a href="/verdetallepintura/{{i.id}}" >{{i.titulo}}</a>
+            </td>
+
+            <td>
+              <p class="\mostrar_usuario">{{i.nombre_usuario}} {{i.apellido_usuario}}</p>
+            </td>
+
+              <td class="ultimotd">
+               {%if i.id_pintor == session['idusuario']%}
+                  <a href="\editarpintura\{{i.id}}">editar</a>
+                  <a href="\eliminarpintura\{{i.id}}" onclick="return confirm('Desea eliminar la pitura?')">eliminar</a>
+              </td>
+
+               </tr>
+               {%endif%}
+             {%endfor%}
+          {%endif%}
+        </table>
+
+      </div>
+
+
+
+    <div class="fila2columna2">
+
+      <table class="tabla_compras">
+
+          <tr>
+              <th>Titulo</th>
+              <th>Pintor</th>
+          </tr>
+
+       {%if lista_compras_usuario.pinturas_compradores.id != None%}
+          {%for i in lista_compras_usuario.pinturas_compradores%}
+          <tr>
+            <td>
+             <p>{{i.titulo}}</p>
+            </td>
+
+            <td>
+             <p class="\mostrar_usuario">{{i.nombre_usuario}} {{i.apellido_usuario}}</p>
+           </td>
+          </tr>
+          {%endfor%}
+       {%else%}
+             <tr><td colspan="2">no se encontraron registros</td></tr>
+       {%endif%}
+      </table>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,195 @@
+.principal{
+    /* border: 1px solid black; */
+    width: 85%;
+    height: 85%;
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: row;
+    /* outline: 1px solid red; */
+    gap: 100px;
+}
+
+.fila1{
+    padding-top: 30px;
+}
+
+ .tabla_revistas{
+    /* border: 1px solid  lightgray; */
+    width: 90%;
+    margin: 0 auto;
+}
+
+.celda_cuerpo{
+    margin-top: 10px;
+    height: 150px;
+    border: 1px solid lightgray;
+    border-radius: 2.5px;
+    padding: 10px;
+}
+
+.celda_opciones{
+    display: flex;
+    justify-content: center;
+    line-height: 80px;
+    margin-left: 30px;
+    gap: 30px;
+}
+
+.celda_opciones_cuerpo{
+    display: flex;
+    gap:40px;
+    margin-bottom: 10px;
+}
+
+.celda_opciones_cuerpo a:not(:last-child){
+    margin-top: 10px;
+    height: 30px;
+    background-color: lightgray;
+    border-radius: 3px;
+    text-decoration: none;
+    color:black;
+    padding: 3px;
+    border: solid 1px gray;
+}
+
+.celda_opciones_cuerpo a:last-child{
+    margin-top: 10px;
+    margin-left: auto;
+}
+
+
+.celda_opciones_cuerpo p{margin-left: auto;
+margin-top: 10px;
+}
+
+.fila_post{
+    margin-top: 50px;
+    /* outline: 1px solid red; */
+}
+
+/* .tabla_revistas{
+    width: 60%;
+} */
+
+.tabla_revistas th:nth-child(1),
+.tabla_revistas th:nth-child(2),
+.tabla_revistas th:nth-child(4)
+{
+margin-left: 30px;
+text-align: center;
+}
+
+.tabla_revistas td:nth-child(1),
+.tabla_revistas td:nth-child(2),
+.tabla_revistas td:nth-child(4)
+{
+    text-align: center;
+    vertical-align: top;
+    padding-top: 20px;     
+}
+
+.celda_usuario{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+ #actualizar_usuario input{
+    width: 350px;
+
+} 
+
+
+
+/*estilos para enlazar con bootstrap - descargado de w3schools*/
+
+.dropbtn {
+    background-color: #0D6EFD;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0D6EFD;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover { color:yellow; background-color: #0D6EFD;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #0D6EFD;}
+  
+
+  .titulo_index{
+    display: flex;
+    gap: 30px;
+    /* outline: 1px solid red; */
+  }
+
+  .vinculos{
+    display: flex;
+    gap: 40px;
+    flex-direction: row;
+    line-height: 50px;
+  }
+
+  .columna1user{
+    margin-left: 75px;
+  }
+
+  .titulousr{
+    margin-bottom: 50px;
+    display: flex;
+    gap:700px;
+    line-height: 50px;
+  }
+
+.principal_titulo{
+  display: flex;
+  gap :300px;
+  margin-left: 150px;
+  margin-top:50px;
+}
+
+.fila2columna1{
+padding: 20px;
+  width: 700px;
+}
+
+.fila2columna1 table{
+  width: 100%;
+}
+
+.fila2columna2{
+  width: 500px;
+  padding: 20px;
+
+}
+
+.fila2columna2 table{
+  width: 100%;
+}
+
+
+.fila2columna1, .fila2columna2{
+  outline: 1px solid black;
+}

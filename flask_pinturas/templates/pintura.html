@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block titulo %}Datos de la Revista{% endblock %}
+{% block contenido %}
+
+
+{% include '_menu.html' %}
+
+
+
+<div class="principal" >
+
+
+    <div class="columna1 col-md-12 col-lg-6">
+
+        <div class="container mt-5">
+            <h1>Mostrar datos de Pintura</h1>
+            <h3>" {{pintura_detalle.titulo}} "</h3>
+        </div>
+
+        <div style="margin-left: 450px;">
+            <a href="/agregarpintura">Agregar Pintura</a>
+        </div>
+        <br>
+        <hr>
+                
+                <div class="mb-3">
+                    <h2></h2>
+                    <h3>Pintor:</h3>
+                    <P>{{pintura_detalle.nombre_usuario}} {{pintura_detalle.apellido_usuario}}</P>
+                </div>
+
+                <div class="mb-3">
+                    <h3>Descrpcion:</h3>
+                    <p>{{pintura_detalle.descripcion}}</p>
+                </div>
+
+                <div class="mb-3">
+                    <h3>Precio:</h3>
+                    <p>$ {{pintura_detalle.precio}}</p>
+                </div>
+
+                <div class="mb-3">
+                    <h3>Compradas   : {{pintura_detalle.count_compradores}}  </h3>
+                    <h2>Disponibles : {{pintura_detalle.cantidad - pintura_detalle.count_compradores}}</h2>
+                    <hr>
+                    {%if pintura_detalle.count_compradores < pintura_detalle.cantidad %}
+                        <a class ="btn btn-danger"  href="/comprarpintura/{{pintura_detalle.id}}" onclick="return confirm('Desea comprar la pitura?')">comprar</a>
+                    {%else%}
+                        <p>sold out</p>
+                    {%endif%}
+                </div>
+
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}
